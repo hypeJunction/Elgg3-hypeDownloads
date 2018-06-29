@@ -1,0 +1,22 @@
+.downloads-input-release {
+	padding: 1rem;
+	border: 1px solid $(border-color-soft);
+	border-radius: 3px;
+	margin-bottom: 0.5rem !important;
+}
+
+.downloads-input-release .elgg-field:last-child {
+	margin-bottom: 0;
+}
+
+.downloads-add-release-form {
+	display: block;
+	margin: 0.5rem;
+}
+
+.downloads-input-release .elgg-chip {
+	padding: 0 0.5rem 1rem;
+	margin-bottom: 1rem;
+	border-bottom: 1px solid $(border-color-soft);
+	width: 100%;
+}
