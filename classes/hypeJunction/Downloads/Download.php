@@ -50,4 +50,25 @@ class Download extends \ElggObject {
 
 		return $releases ? $releases[0] : null;
 	}
+
+	/**
+	 * Check if user has permissions do download releases of this package
+	 *
+	 * @param int  $user_guid User guid
+	 * @param bool $default   Default permission
+	 *
+	 * @return bool
+	 */
+	public function canDownload($user_guid = 0, $default = true) {
+		if (!$user_guid) {
+			$user_guid = elgg_get_logged_in_user_guid();
+		}
+
+		$user = get_entity($user_guid);
+
+		return elgg_trigger_plugin_hook('permissions_check:download', 'object:download', [
+			'user' => $user,
+			'entity' => $this,
+		], $default);
+	}
 }

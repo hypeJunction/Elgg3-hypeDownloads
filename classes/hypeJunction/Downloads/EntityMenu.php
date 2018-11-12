@@ -19,7 +19,8 @@ class EntityMenu {
 
 		$menu = $hook->getValue();
 
-		if ($entity instanceof Release && $entity->canDownload()) {
+		if ($entity instanceof Release) {
+			// We are not checking the download permission here, as it will be enforced by controller
 			$menu[] = \ElggMenuItem::factory([
 				'name' => 'download',
 				'icon' => 'download',
