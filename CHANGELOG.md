@@ -1,3 +1,13 @@
+<a name="1.2.2"></a>
+## [1.2.2](https://github.com/hypeJunction/Elgg3-hypeDownloads/compare/1.2.1...v1.2.2) (2019-06-21)
+
+
+### Bug Fixes
+
+* **languages:** fix typo in language key ([65d630b](https://github.com/hypeJunction/Elgg3-hypeDownloads/commit/65d630b))
+
+
+
 <a name="1.2.1"></a>
 ## [1.2.1](https://github.com/hypeJunction/Elgg3-hypeDownloads/compare/1.2.0...v1.2.1) (2019-06-21)
 
