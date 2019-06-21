@@ -1,3 +1,13 @@
+<a name="1.2.0"></a>
+# [1.2.0](https://github.com/hypeJunctionPro/Elgg3-hypeDownloads/compare/1.1.0...v1.2.0) (2019-06-21)
+
+
+### Features
+
+* **ui:** add a download counter ([ba5d63e](https://github.com/hypeJunctionPro/Elgg3-hypeDownloads/commit/ba5d63e))
+
+
+
 <a name="1.1.0"></a>
 # [1.1.0](https://github.com/hypeJunctionPro/Elgg3-hypeDownloads/compare/1.0.2...v1.1.0) (2018-11-12)
 
