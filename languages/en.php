@@ -32,5 +32,5 @@ return [
 
 	'downloads:changelog' => 'Changelog',
 	'downloads:manifest' => 'Manifest',
-	'downloads:cont' => 'Number of total downloads',
+	'downloads:count' => 'Number of total downloads',
 ];
