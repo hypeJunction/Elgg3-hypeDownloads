@@ -33,6 +33,9 @@ return function () {
 		elgg_register_plugin_hook_handler('fields', 'object:download', \hypeJunction\Downloads\SetupDownloadForm::class);
 
 		elgg_register_plugin_hook_handler('register', 'menu:entity', \hypeJunction\Downloads\EntityMenu::class);
+		elgg_register_plugin_hook_handler('register', 'menu:social', \hypeJunction\Downloads\SocialMenu::class);
+
+		elgg_register_plugin_hook_handler('download:url', 'file', \hypeJunction\Downloads\SetDownloadUrl::class);
 
 		elgg_register_ajax_view('input/downloads/release');
 
@@ -43,5 +46,7 @@ return function () {
 			'text' => elgg_echo('collection:object:download'),
 			'href' => elgg_generate_url('collection:object:download:all'),
 		]);
+
+		\hypeJunction\Stash\Stash::instance()->register(new \hypeJunction\Downloads\DownloadsCounter());
 	});
 };

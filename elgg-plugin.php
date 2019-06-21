@@ -56,6 +56,13 @@ return [
 			'path' => '/downloads/releases/{guid}',
 			'resource' => 'collection/group',
 		],
+		'download:object:download_release' => [
+			'path' => '/downloads/download/{guid}',
+			'controller' => \hypeJunction\Downloads\DownloadController::class,
+			'middleware' => [
+				\Elgg\Router\Middleware\Gatekeeper::class,
+			],
+		],
 	],
 	'widgets' => [
 		'downloads' => [

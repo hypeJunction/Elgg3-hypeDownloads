@@ -34,6 +34,11 @@
         <name>hypePost</name>
     </requires>
 
+    <requires>
+        <type>plugin</type>
+        <name>hypeStash</name>
+    </requires>
+
     <suggests>
         <type>plugin</type>
         <name>hypePaywall</name>

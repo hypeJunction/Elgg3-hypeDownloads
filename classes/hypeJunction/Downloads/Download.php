@@ -3,6 +3,7 @@
 namespace hypeJunction\Downloads;
 
 use hypeJunction\Lists\Collection;
+use hypeJunction\Stash\Stash;
 
 class Download extends \ElggObject {
 
@@ -52,6 +53,20 @@ class Download extends \ElggObject {
 	}
 
 	/**
+	 * Get latest release
+	 * @return Release|null
+	 */
+	public function getLastRelease() {
+		$releases = $this->getReleases()->getList()->get(0);
+
+		usort($releases, function ($a, $b) {
+			return version_compare($b->version, $a->version);
+		});
+
+		return $releases[0];
+	}
+
+	/**
 	 * Check if user has permissions do download releases of this package
 	 *
 	 * @param int  $user_guid User guid
@@ -70,5 +85,28 @@ class Download extends \ElggObject {
 			'user' => $user,
 			'entity' => $this,
 		], $default);
+	}
+
+	/**
+	 * Count downloads of all releases
+	 * @return int
+	 */
+	public function countDownloads() {
+		$releases = $this->getReleases()->getList()->get(0);
+		$count = 0;
+
+		foreach ($releases as $release) {
+			$count += $release->countAnnotations('log:download');
+		}
+
+		return $count;
+	}
+
+	/**
+	 * Retrieve downloads count from cache
+	 * @return int
+	 */
+	public function getDownloadsCount() {
+		return Stash::instance()->get(DownloadsCounter::PROPERTY, $this);
 	}
 }
