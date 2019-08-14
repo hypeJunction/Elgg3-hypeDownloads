@@ -21,7 +21,7 @@ class SetDownloadUrl {
 			return null;
 		}
 
-		if ($file->getVolatileData('downloading')) {
+		if ($file->getVolatileData('downloading') || $file->getVolatileData('allow_download')) {
 			return null;
 		}
 
