@@ -1,3 +1,13 @@
+<a name="1.2.3"></a>
+## [1.2.3](https://github.com/hypeJunction/Elgg3-hypeDownloads/compare/1.2.2...v1.2.3) (2019-08-14)
+
+
+### Bug Fixes
+
+* **download:** fix issue with infinite loops ([bdeb4b5](https://github.com/hypeJunction/Elgg3-hypeDownloads/commit/bdeb4b5))
+
+
+
 <a name="1.2.2"></a>
 ## [1.2.2](https://github.com/hypeJunction/Elgg3-hypeDownloads/compare/1.2.1...v1.2.2) (2019-06-21)
 
