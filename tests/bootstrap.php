@@ -14,18 +14,14 @@ spl_autoload_register(function ($class) use ($testClassesDir) {
 });
 
 $pluginRoot = dirname(__DIR__);
-if (file_exists($pluginRoot . '/autoloader.php')) {
-    require_once $pluginRoot . '/autoloader.php';
-} else {
-    spl_autoload_register(function ($class) use ($pluginRoot) {
-        if (strncmp($class, 'hypeJunction\\', 13) !== 0) {
-            return;
-        }
-        $file = $pluginRoot . '/classes/' . str_replace('\\', '/', $class) . '.php';
-        if (file_exists($file)) {
-            require_once $file;
-        }
-    });
-}
+spl_autoload_register(function ($class) use ($pluginRoot) {
+    if (strncmp($class, 'hypeJunction\\', 13) !== 0) {
+        return;
+    }
+    $file = $pluginRoot . '/classes/' . str_replace('\\', '/', $class) . '.php';
+    if (file_exists($file)) {
+        require_once $file;
+    }
+});
 
 \Elgg\Application::loadCore();

@@ -21,7 +21,7 @@ class Release extends \ElggFile {
 	/**
 	 * {@inheritdoc}
 	 */
-	public function getDisplayName() {
+	public function getDisplayName(): string {
 		$download = $this->getContainerEntity();
 		if ($download) {
 			return implode(' ', array_filter([$download->getDisplayName(), $this->version]));
@@ -44,7 +44,7 @@ class Release extends \ElggFile {
 	/**
 	 * {@inheritdoc}
 	 */
-	public function canDownload($user_guid = 0, $default = true) {
+	public function canDownload(int $user_guid = 0, bool $default = true): bool {
 		$default = $this->getPackage()->canDownload($user_guid, $default);
 
 		return _elgg_services()->userCapabilities->canDownload($this, $user_guid, $default);

@@ -2,7 +2,7 @@
 
 namespace hypeJunction\Downloads;
 
-use Elgg\Hook;
+use Elgg\Event;
 use Elgg\Plugins\PluginTesting;
 use Elgg\UnitTestCase;
 use Elgg\Values;
@@ -15,9 +15,7 @@ class DownloadObjectTest extends UnitTestCase {
 		$this->startPlugin();
 	}
 
-	public function down() {
-
-	}
+	public function down() {}
 
 	public function testCanOverrideDownloadPermissions() {
 
@@ -35,13 +33,13 @@ class DownloadObjectTest extends UnitTestCase {
 		$this->assertTrue($download->canDownload());
 		$this->assertTrue($release->canDownload());
 
-		$this->registerTestingHook('permissions_check:download', 'object:download', [Values::class, 'getFalse']);
+		$this->registerTestingEvent('permissions_check:download', 'object:download', [Values::class, 'getFalse']);
 
 		$this->assertFalse($download->canDownload());
 		$this->assertFalse($release->canDownload());
 
-		$this->registerTestingHook('permissions_check:download', 'file', function(Hook $hook) use ($release) {
-			if ($hook->getEntityParam()->guid == $release->guid) {
+		$this->registerTestingEvent('permissions_check:download', 'file', function(Event $event) use ($release) {
+			if ($event->getEntityParam()->guid == $release->guid) {
 				return true;
 			}
 
@@ -51,5 +49,4 @@ class DownloadObjectTest extends UnitTestCase {
 		$this->assertFalse($download->canDownload());
 		$this->assertTrue($release->canDownload());
 	}
-
 }
