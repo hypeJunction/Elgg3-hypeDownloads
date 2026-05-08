@@ -2,14 +2,14 @@
 
 namespace hypeJunction\Downloads;
 
-use Elgg\Hook;
+use Elgg\Event;
 use hypeJunction\Fields\MetaField;
 
 class SetupDownloadForm {
 
-	public function __invoke(Hook $hook) {
+	public function __invoke(Event $event) {
 
-		$fields = $hook->getValue();
+		$fields = $event->getValue();
 		/* @var $fields \hypeJunction\Fields\Collection */
 
 		$fields->add('releases', new ReleasesField([

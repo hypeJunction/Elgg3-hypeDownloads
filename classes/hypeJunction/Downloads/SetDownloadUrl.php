@@ -2,20 +2,13 @@
 
 namespace hypeJunction\Downloads;
 
-use Elgg\Hook;
+use Elgg\Event;
 
 class SetDownloadUrl {
 
-	/**
-	 * Rewrite download URL
-	 *
-	 * @param Hook $hook Hook
-	 *
-	 * @return bool
-	 */
-	public function __invoke(Hook $hook) {
+	public function __invoke(Event $event) {
 
-		$file = $hook->getEntityParam();
+		$file = $event->getEntityParam();
 
 		if (!$file instanceof Release) {
 			return null;

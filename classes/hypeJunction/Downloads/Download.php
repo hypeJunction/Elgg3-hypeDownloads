@@ -81,7 +81,7 @@ class Download extends \ElggObject {
 
 		$user = get_entity($user_guid);
 
-		return elgg_trigger_plugin_hook('permissions_check:download', 'object:download', [
+		return elgg_trigger_event_results('permissions_check:download', 'object:download', [
 			'user' => $user,
 			'entity' => $this,
 		], $default);

@@ -2,24 +2,19 @@
 
 namespace hypeJunction\Downloads;
 
-use Elgg\Hook;
+use Elgg\Event;
 
 class SetupContainerLogic {
 
-	/**
-	 * Setup container logic
-	 *
-	 * @param Hook $hook Hook
-	 *
-	 * @return bool
-	 */
-	public function __invoke(Hook $hook) {
+	public function __invoke(Event $event): ?bool {
 
-		$container = $hook->getParam('container');
-		$subtype = $hook->getParam('subtype');
+		$container = $event->getParam('container');
+		$subtype = $event->getParam('subtype');
 
 		if ($subtype == Release::SUBTYPE && !$container instanceof Download) {
 			return false;
 		}
+
+		return null;
 	}
 }

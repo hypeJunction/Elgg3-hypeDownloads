@@ -2,33 +2,23 @@
 
 namespace hypeJunction\Downloads;
 
-use Elgg\Hook;
+use Elgg\Event;
 
 class EntityMenu {
 
-	/**
-	 * Setup entity menu
-	 *
-	 * @param Hook $hook Hook
-	 *
-	 * @return \ElggMenuItem[]
-	 */
-	public function __invoke(Hook $hook) {
+	public function __invoke(Event $event): void {
 
-		$entity = $hook->getEntityParam();
+		$entity = $event->getEntityParam();
 
-		$menu = $hook->getValue();
+		$menu = $event->getValue();
 
 		if ($entity instanceof Release) {
-			// We are not checking the download permission here, as it will be enforced by controller
-			$menu[] = \ElggMenuItem::factory([
+			$menu->add(\ElggMenuItem::factory([
 				'name' => 'download',
 				'icon' => 'download',
 				'text' => elgg_echo('download'),
 				'href' => elgg_get_download_url($entity),
-			]);
+			]));
 		}
-
-		return $menu;
 	}
 }
