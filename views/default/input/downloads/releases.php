@@ -37,7 +37,7 @@ echo elgg_format_element('div', [
 ], $input);
 
 ?>
-<script>
-	require(['input/downloads/releases']);
+<script type="module">
+	import('input/downloads/releases');
 </script>
 
