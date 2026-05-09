@@ -1,30 +1,30 @@
 {
-	"name": "hypejunction/hypedownloads",
-	"type": "elgg-plugin",
-	"description": "Digital product shop",
-	"homepage": "https://github.com/hypeJunction/hypedownloads",
-	"keywords": [
-		"elgg",
-		"plugin"
-	],
-	"license": "proprietary",
-	"authors": [
-		{
-			"name": "Ismayil Khayredinov",
-			"email": "ismayil.khayredinov@gmail.com"
-		}
-	],
-	"extra": {
-		"installer-name": "hypeDownloads"
-	},
-	"require": {
-		"php": ">=5.5",
-		"composer/installers": "~1.0",
-		"elgg/elgg": "^5.0"
-	},
-	"autoload": {
-		"psr-0": {
-			"": "classes/"
-		}
-	}
+    "name": "hypejunction/hypedownloads",
+    "type": "elgg-plugin",
+    "description": "Digital product shop",
+    "homepage": "https://github.com/hypeJunction/hypedownloads",
+    "keywords": [
+        "elgg",
+        "plugin"
+    ],
+    "license": "GPL-2.0-or-later",
+    "authors": [
+        {
+            "name": "Ismayil Khayredinov",
+            "email": "ismayil.khayredinov@gmail.com"
+        }
+    ],
+    "extra": {
+        "installer-name": "hypeDownloads"
+    },
+    "require": {
+        "php": ">=5.5",
+        "composer/installers": "~1.0",
+        "elgg/elgg": "^5.0"
+    },
+    "autoload": {
+        "psr-0": {
+            "": "classes/"
+        }
+    }
 }
