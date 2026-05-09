@@ -73,4 +73,14 @@ return [
 			'context' => ['profile', 'dashboard', 'groups'],
 		],
 	],
+
+	'events' => [
+		'seeds' => [
+			'database' => [
+				[
+					'handler' => [\hypeJunction\Downloads\Seeder::class, 'addSeed'],
+				],
+			],
+		],
+	],
 ];
