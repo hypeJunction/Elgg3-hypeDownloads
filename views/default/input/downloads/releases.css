@@ -1,6 +1,6 @@
 .downloads-input-release {
 	padding: 1rem;
-	border: 1px solid $(border-color-soft);
+	border: 1px solid var(--elgg-border-color-soft);
 	border-radius: 3px;
 	margin-bottom: 0.5rem !important;
 }
@@ -17,7 +17,7 @@
 .downloads-input-release .elgg-chip {
 	padding: 0 0.5rem 1rem;
 	margin-bottom: 1rem;
-	border-bottom: 1px solid $(border-color-soft);
+	border-bottom: 1px solid var(--elgg-border-color-soft);
 	width: 100%;
 }
 
