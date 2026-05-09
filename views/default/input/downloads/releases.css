@@ -1,7 +1,11 @@
+:root {
+	--downloads-release-border-radius: 3px;
+}
+
 .downloads-input-release {
 	padding: 1rem;
 	border: 1px solid var(--elgg-border-color-soft);
-	border-radius: 3px;
+	border-radius: var(--downloads-release-border-radius);
 	margin-bottom: 0.5rem !important;
 }
 
