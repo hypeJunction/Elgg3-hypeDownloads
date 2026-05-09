@@ -9,10 +9,10 @@
 	<category>files</category>
     <category>commerce</category>
 
-	<author>Ismayil Khayredinov (info@hypejunction.com)</author>
-	<website>http://hypeJunction.com</website>
+	<author>Ismayil Khayredinov</author>
+	<website>https://github.com/hypeJunction/Elgg3-hypeDownloads</website>
 	<copyright>2018 (c) Ismayil Khayredinov</copyright>
-	<license>https://hypejunction.com/license</license>
+	<license>proprietary</license>
 
 	<requires>
 		<type>elgg_release</type>
