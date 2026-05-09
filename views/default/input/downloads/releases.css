@@ -20,3 +20,24 @@
 	border-bottom: 1px solid $(border-color-soft);
 	width: 100%;
 }
+
+.downloads-release-grid {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5rem;
+}
+
+.downloads-col-3of4 {
+	flex: 0 0 73%;
+	max-width: 73%;
+}
+
+.downloads-col-1of4 {
+	flex: 0 0 23%;
+	max-width: 23%;
+}
+
+.downloads-col-full {
+	flex: 0 0 100%;
+	max-width: 100%;
+}
