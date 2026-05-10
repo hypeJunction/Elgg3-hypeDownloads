@@ -2,7 +2,7 @@
     "name": "hypejunction/hypedownloads",
     "type": "elgg-plugin",
     "description": "Digital product shop",
-    "homepage": "https://github.com/hypeJunction/hypedownloads",
+    "homepage": "https://github.com/hypeJunction/Elgg3-hypeDownloads",
     "keywords": [
         "elgg",
         "plugin"
@@ -15,7 +15,7 @@
         }
     ],
     "extra": {
-        "installer-name": "hypeDownloads",
+        "installer-name": "hypedownloads",
         "elgg-plugin": {
             "id": "hypedownloads"
         }
@@ -35,5 +35,6 @@
         "allow-plugins": {
             "composer/installers": true
         }
-    }
+    },
+    "version": "1.2.3"
 }
