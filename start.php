@@ -37,8 +37,6 @@ return function () {
 
 		elgg_register_plugin_hook_handler('download:url', 'file', \hypeJunction\Downloads\SetDownloadUrl::class);
 
-		elgg_register_ajax_view('input/downloads/release');
-
 		elgg_extend_view('elgg.css', 'input/downloads/releases.css');
 
 		elgg_register_menu_item('site', [

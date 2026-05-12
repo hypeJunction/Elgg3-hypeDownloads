@@ -19,7 +19,10 @@ class DownloadObjectTest extends UnitTestCase {
 
 	}
 
-	public function testCanOverrideDownloadPermissions() {
+	/**
+     * @return mixed
+     */
+    public function testCanOverrideDownloadPermissions() {
 
 		$download = $this->createObject([
 			'subtype' => 'download',

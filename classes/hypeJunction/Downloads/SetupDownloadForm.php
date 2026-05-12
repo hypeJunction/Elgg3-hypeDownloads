@@ -7,7 +7,11 @@ use hypeJunction\Fields\MetaField;
 
 class SetupDownloadForm {
 
-	public function __invoke(Hook $hook) {
+	/**
+     * @param Hook $hook
+     * @return mixed
+     */
+    public function __invoke(Hook $hook) {
 
 		$fields = $hook->getValue();
 		/* @var $fields \hypeJunction\Fields\Collection */
