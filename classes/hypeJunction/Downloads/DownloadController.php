@@ -2,7 +2,7 @@
 
 namespace hypeJunction\Downloads;
 
-use Elgg\EntityNotFoundException;
+use Elgg\Exceptions\Http\EntityNotFoundException;
 use Elgg\Request;
 use hypeJunction\Downloads\Release;
 use hypeJunction\Payments\Amount;
@@ -14,7 +14,7 @@ class DownloadController {
 	 *
 	 * @return \Elgg\Http\RedirectResponse
 	 * @throws EntityNotFoundException
-	 * @throws \DataFormatException
+	 * @throws \Elgg\Exceptions\DataFormatException
 	 */
 	public function __invoke(Request $request) {
 		$file = $request->getEntityParam();
