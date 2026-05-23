@@ -77,9 +77,11 @@ return [
 	'events' => [
 		'seeds' => [
 			'database' => [
-				[
-					'handler' => [\hypeJunction\Downloads\Seeder::class, 'addSeed'],
-				],
+				// Elgg 7.x event spec shape: callback string as KEY,
+				// per-handler config as VALUE. Array-form callables
+				// can't be keys, so static methods are spelled as
+				// 'FQCN::method'.
+				'hypeJunction\\Downloads\\Seeder::addSeed' => [],
 			],
 		],
 	],
