@@ -18,28 +18,28 @@ class BootstrapTest extends IntegrationTestCase {
 
 	public function testContainerLogicHandlerRegistered(): void {
 		$this->assertTrue(
-			_elgg_services()->events->hasHandler('container_logic_check', 'object', SetupContainerLogic::class),
+			\_elgg_services()->events->hasHandler('container_logic_check', 'object', SetupContainerLogic::class),
 			'container_logic_check/object handler must be registered'
 		);
 	}
 
 	public function testEntityMenuHandlerRegistered(): void {
 		$this->assertTrue(
-			_elgg_services()->events->hasHandler('register', 'menu:entity', EntityMenu::class),
+			\_elgg_services()->events->hasHandler('register', 'menu:entity', EntityMenu::class),
 			'register/menu:entity handler must be registered'
 		);
 	}
 
 	public function testSocialMenuHandlerRegistered(): void {
 		$this->assertTrue(
-			_elgg_services()->events->hasHandler('register', 'menu:social', SocialMenu::class),
+			\_elgg_services()->events->hasHandler('register', 'menu:social', SocialMenu::class),
 			'register/menu:social handler must be registered'
 		);
 	}
 
 	public function testSyncReleaseAccessHandlerRegistered(): void {
 		$this->assertTrue(
-			_elgg_services()->events->hasHandler('update:after', 'object', SyncReleaseAccess::class),
+			\_elgg_services()->events->hasHandler('update:after', 'object', SyncReleaseAccess::class),
 			'update:after/object handler must be registered'
 		);
 	}

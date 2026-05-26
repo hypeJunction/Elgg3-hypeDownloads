@@ -27,7 +27,7 @@ class DefaultDownloadCollection extends Collection {
 	 * {@inheritdoc}
 	 */
 	public function getDisplayName() {
-		return elgg_echo('collection:object:download');
+		return \elgg_echo('collection:object:download');
 	}
 
 	/**
@@ -68,7 +68,7 @@ class DefaultDownloadCollection extends Collection {
 	 * {@inheritdoc}
 	 */
 	public function getURL() {
-		return elgg_generate_url($this->getId());
+		return \elgg_generate_url($this->getId());
 	}
 
 	/**
@@ -77,7 +77,7 @@ class DefaultDownloadCollection extends Collection {
 	public function getListOptions(array $options = []) {
 		return array_merge([
 			'full_view' => false,
-			'no_results' => elgg_echo('download:none'),
+			'no_results' => \elgg_echo('download:none'),
 			'pagination_type' => 'infinite',
 			'list_class' => 'post-list',
 			'list_type' => get_input('list_type', 'gallery'),
@@ -89,7 +89,7 @@ class DefaultDownloadCollection extends Collection {
 	 * {@inheritdoc}
 	 */
 	public function getFilterOptions() {
-		if (!elgg_is_logged_in()) {
+		if (!\elgg_is_logged_in()) {
 			return [];
 		}
 

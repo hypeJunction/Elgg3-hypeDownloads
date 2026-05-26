@@ -16,8 +16,8 @@ class EntityMenu {
 			$menu->add(\ElggMenuItem::factory([
 				'name' => 'download',
 				'icon' => 'download',
-				'text' => elgg_echo('download'),
-				'href' => elgg_get_download_url($entity),
+				'text' => \elgg_echo('download'),
+				'href' => \elgg_get_download_url($entity),
 			]));
 		}
 	}
