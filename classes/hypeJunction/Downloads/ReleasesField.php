@@ -16,7 +16,7 @@ class ReleasesField extends Field {
 	 */
 	public function raw(Request $request, ElggEntity $entity) {
 		return [
-			'files' => elgg_get_uploaded_files($this->name),
+			'files' => \elgg_get_uploaded_files($this->name),
 			'meta' => $request->getParam($this->name),
 		];
 	}
@@ -29,8 +29,8 @@ class ReleasesField extends Field {
 
 		$value = $parameters->get($this->name);
 
-		$releases = elgg_extract('meta', $value);
-		$uploads = elgg_extract('files', $value);
+		$releases = \elgg_extract('meta', $value);
+		$uploads = \elgg_extract('files', $value);
 
 		$keys = array_keys($releases);
 

@@ -25,17 +25,17 @@ class DownloadController {
 
 		$file->setVolatileData('downloading', true);
 
-		$user = elgg_get_logged_in_user_entity() ? : elgg_get_site_entity();
+		$user = \elgg_get_logged_in_user_entity() ? : \elgg_get_site_entity();
 
 		$log = serialize([
 			'user_guid' => $user->guid,
-			'ip_address' => _elgg_services()->request->getClientIp(),
+			'ip_address' => \_elgg_services()->request->getClientIp(),
 		]);
 
 		$file->annotate('log:download', $log, ACCESS_PUBLIC, $user->guid);
 
-		elgg_trigger_event('download', 'file', $file);
+		\elgg_trigger_event('download', 'file', $file);
 
-		return elgg_redirect_response($file->getDownloadURL());
+		return \elgg_redirect_response($file->getDownloadURL());
 	}
 }

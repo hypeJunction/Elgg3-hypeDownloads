@@ -29,7 +29,7 @@ class DownloadReleasesCollection extends Collection {
 	 * {@inheritdoc}
 	 */
 	public function getDisplayName() {
-		return elgg_echo('collection:object:download_release');
+		return \elgg_echo('collection:object:download_release');
 	}
 
 	/**
@@ -65,7 +65,7 @@ class DownloadReleasesCollection extends Collection {
 	 * {@inheritdoc}
 	 */
 	public function getURL() {
-		return elgg_generate_url($this->getId(), [
+		return \elgg_generate_url($this->getId(), [
 			'guid' => (int) $this->target->guid,
 		]);
 	}
@@ -76,7 +76,7 @@ class DownloadReleasesCollection extends Collection {
 	public function getListOptions(array $options = []) {
 		return array_merge([
 			'full_view' => false,
-			'no_results' => elgg_echo('downloads:no_results'),
+			'no_results' => \elgg_echo('downloads:no_results'),
 			'columns' => [
 				new ViewColumn('object/download_release/columns/icon'),
 				new ViewColumn('object/download_release/columns/version'),
@@ -94,7 +94,7 @@ class DownloadReleasesCollection extends Collection {
 	 * {@inheritdoc}
 	 */
 	public function getFilterOptions() {
-		if (!elgg_is_logged_in()) {
+		if (!\elgg_is_logged_in()) {
 			return [];
 		}
 

@@ -22,8 +22,8 @@ class SyncReleaseAccess {
 			return null;
 		}
 
-		elgg_call(ELGG_IGNORE_ACCESS | ELGG_SHOW_DISABLED_ENTITIES, function() use ($entity) {
-			$releases = elgg_get_entities([
+		\elgg_call(ELGG_IGNORE_ACCESS | ELGG_SHOW_DISABLED_ENTITIES, function() use ($entity) {
+			$releases = \elgg_get_entities([
 				'type' => 'object',
 				'subtype' => Release::SUBTYPE,
 				'container_guid' => $entity->getGUID(),

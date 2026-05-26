@@ -27,9 +27,9 @@ class SocialMenu {
 				// We are not checking the download permission here, as it will be enforced by controller
 				$menu[] = \ElggMenuItem::factory([
 					'name' => 'download:count',
-					'title' => elgg_echo('downloads:count'),
+					'title' => \elgg_echo('downloads:count'),
 					'icon' => 'download',
-					'href' => elgg_get_download_url($release),
+					'href' => \elgg_get_download_url($release),
 					'text' => '',
 					'badge' => $count,
 				]);

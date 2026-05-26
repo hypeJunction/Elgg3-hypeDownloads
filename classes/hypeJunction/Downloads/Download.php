@@ -27,7 +27,7 @@ class Download extends \ElggObject {
 	 * @return Collection
 	 */
 	public function getReleases(array $params = []) {
-		$collection = elgg_get_collection('collection:object:download_release', $this, $params);
+		$collection = \elgg_get_collection('collection:object:download_release', $this, $params);
 
 		return $collection;
 	}
@@ -40,7 +40,7 @@ class Download extends \ElggObject {
 	 * @return Release|null
 	 */
 	public function getRelease($version) {
-		$releases = elgg_get_entities([
+		$releases = \elgg_get_entities([
 			'types' => 'object',
 			'subtypes' => Release::SUBTYPE,
 			'container_guids' => (int) $this->guid,
@@ -76,12 +76,12 @@ class Download extends \ElggObject {
 	 */
 	public function canDownload($user_guid = 0, $default = true) {
 		if (!$user_guid) {
-			$user_guid = elgg_get_logged_in_user_guid();
+			$user_guid = \elgg_get_logged_in_user_guid();
 		}
 
 		$user = get_entity($user_guid);
 
-		return elgg_trigger_plugin_hook('permissions_check:download', 'object:download', [
+		return \elgg_trigger_plugin_hook('permissions_check:download', 'object:download', [
 			'user' => $user,
 			'entity' => $this,
 		], $default);

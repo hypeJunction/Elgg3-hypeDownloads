@@ -25,10 +25,10 @@ class SetDownloadUrl {
 			return null;
 		}
 
-		$url = elgg_generate_url('download:object:download_release', [
+		$url = \elgg_generate_url('download:object:download_release', [
 			'guid' => $file->guid,
 		]);
 
-		return elgg_normalize_site_url($url);
+		return \elgg_normalize_site_url($url);
 	}
 }
