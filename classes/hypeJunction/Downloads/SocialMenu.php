@@ -19,9 +19,9 @@ class SocialMenu {
 
 				$menu->add(\ElggMenuItem::factory([
 					'name' => 'download:count',
-					'title' => elgg_echo('downloads:count'),
+					'title' => \elgg_echo('downloads:count'),
 					'icon' => 'download',
-					'href' => elgg_get_download_url($release),
+					'href' => \elgg_get_download_url($release),
 					'text' => '',
 					'badge' => $count,
 				]));

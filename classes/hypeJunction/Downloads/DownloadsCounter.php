@@ -33,7 +33,7 @@ class DownloadsCounter implements Preloader {
 	 */
 	public function up(Stash $stash, EventsService $events, PluginHooksService $hooks) {
 		$callback = function (Event $event) use ($stash) {
-			elgg_call(
+			\elgg_call(
 				ELGG_IGNORE_ACCESS,
 				function () use ($event, $stash) {
 					$annotation = $event->getObject();
@@ -69,7 +69,7 @@ class DownloadsCounter implements Preloader {
 	 * {@inheritdoc}
 	 */
 	public function preload(\ElggEntity $entity) {
-		return elgg_call(
+		return \elgg_call(
 			ELGG_IGNORE_ACCESS,
 			function () use ($entity) {
 				if ($entity instanceof Download) {

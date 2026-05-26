@@ -47,6 +47,6 @@ class Release extends \ElggFile {
 	public function canDownload(int $user_guid = 0, bool $default = true): bool {
 		$default = $this->getPackage()->canDownload($user_guid, $default);
 
-		return _elgg_services()->userCapabilities->canDownload($this, $user_guid, $default);
+		return \_elgg_services()->userCapabilities->canDownload($this, $user_guid, $default);
 	}
 }
