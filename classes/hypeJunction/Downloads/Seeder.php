@@ -6,6 +6,17 @@ use Elgg\Database\Seeds\Seed;
 
 class Seeder extends Seed {
 
+	public static function getType(): string {
+		return 'download';
+	}
+
+	protected function getCountOptions(): array {
+		return [
+			'type' => 'object',
+			'subtype' => 'download',
+		];
+	}
+
 	public function seed() {
 		$this->advance($this->getCount());
 
